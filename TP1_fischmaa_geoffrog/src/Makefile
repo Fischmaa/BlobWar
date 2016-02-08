@@ -1,7 +1,14 @@
-PROG = maina
-OBJS = main.o 
 CXX = g++
-CXXFLAGS = -Wall -g
+CXXFLAGS = -O2 -Wall -g
+EXECUTABLE = exe 
+SOURCES = main.cpp
+OBJETS = $(SOURCES:.cxx=.o)
 
-$(PROG): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
+$(EXECUTABLE): $(OBJETS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ 
+
+.cxx.o: 
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+clean:
+	rm -f $(EXECUTABLE) *.o

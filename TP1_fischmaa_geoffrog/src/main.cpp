@@ -1,6 +1,10 @@
-#include "gDvector.cpp"
+#include "Dvector.cpp"
+#include <iostream>
+#include <fstream>
+
 int main()
 {
-	Dvector V(3.0);
+	Dvector V = Dvector(3);
+	V.display(std::cout);
 	return 0 ;
 }

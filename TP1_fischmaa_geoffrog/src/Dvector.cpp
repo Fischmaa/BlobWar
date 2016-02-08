@@ -3,14 +3,17 @@
 #include <fstream>
 Dvector::Dvector()
 {
-	Dvector(0.);
+	Dvector(0);
 }
-Dvector::Dvector(double d)
+Dvector::Dvector(int d){
+	Dvector(d, 0.);
+}
+Dvector::Dvector(int d, double val)
 {
-	dim = d;
-	vect = new double[d];
-	for(int i=0; i<dim;i++){
-		vect[i]=0;
+	this->dim = d;
+	this->vect = new double[dim];
+	for( int i=0; i < dim ; i++ ){
+		this->vect[i]= val;
 	}
 }
 
@@ -18,7 +21,9 @@ Dvector::~Dvector()
 {
 	delete [] vect ;
 }
-Dvector::display( std::ostream& str)
+void Dvector::display( std::ostream& str)
 {
-	std::
+	for (int i = 0; i < dim ; i++){
+		str << this->vect[i] << "\n" ;
+	}
 }
