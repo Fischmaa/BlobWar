@@ -1,4 +1,6 @@
 #include "Dvector.h"
+#include <ctime>
+#include <cstdlib>
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -20,7 +22,7 @@ Dvector::Dvector(int d, double val = 0)
 }
 
 Dvector::Dvector(const Dvector & P){
-  dim=P.getDim();
+  dim=P.size();
   if(dim == 0) return;
   vect=new double[dim];
   for(int i=0;i<dim;i++){
@@ -51,7 +53,8 @@ Dvector::Dvector(std::string name)
 
 
 
-int Dvector::getDim() const {
+
+int Dvector::size() const {
   return dim;
 }
 
@@ -72,6 +75,8 @@ Dvector::~Dvector()
 {
 	delete [] vect ;
 }
+
+
 void Dvector::display( std::ostream& str)
 {
 	for (int i = 0; i < dim ; i++){
@@ -80,4 +85,11 @@ void Dvector::display( std::ostream& str)
 }
 
 
+void Dvector::fillRandomly (){
+  for(int i=0;i<dim;i++){
+  vect[i]= (double)rand() / (double)RAND_MAX ;
+}
 
+
+
+}

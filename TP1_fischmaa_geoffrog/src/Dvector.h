@@ -10,16 +10,17 @@ public:
 	Dvector(const Dvector & P);
 	Dvector(std::string name);
 	~Dvector();
-
 	void display(std::ostream& str);
-	int  getDim()const ;
+	void fillRandomly ();
 	double getVect(int i) const;
-  
+	int size() const;
+	
 
 private:
 	int dim;	
 	double *vect ;
 
 };
+
 
 #endif
