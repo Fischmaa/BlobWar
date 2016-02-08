@@ -3,9 +3,11 @@
 #include <fstream>
 
 int main()
-{
-	std::string name("tp1_test.txt");
-	Dvector P = Dvector(name);
-	P.display(std::cout);
+{	
+	std::stringstream str;
+	Dvector P = Dvector(5,2);
+	P.display(str);
+	Dvector Q = Dvector(str.str());
+	Q.display(std::cout);
 	return 0 ;
 }
