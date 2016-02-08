@@ -11,9 +11,11 @@ public:
 	Dvector(const Dvector & P);
 	~Dvector();
 	void display(std::ostream& str);
-	int  Getdim()const ;
+        void fillRandomly ();
 
-	double Getvect(int i) const;
+	double getVect(int i) const;
+	int size() const;
+	
   
 
 private:
@@ -21,5 +23,6 @@ private:
 	double *vect ;
 	/* data */
 };
+
 
 #endif
