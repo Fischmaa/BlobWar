@@ -62,12 +62,11 @@ public:
  */
 	int size() const;
 	
-  
 
 private:
 	int dim;	
 	double *vect ;
-	/* data */
+
 };
 
 

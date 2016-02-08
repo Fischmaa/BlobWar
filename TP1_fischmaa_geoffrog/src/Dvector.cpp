@@ -3,16 +3,16 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
-
+#include <string>
+#include <vector>
 
 Dvector::Dvector()
 {
-	Dvector(0);
+	this->dim = 1 ;
+	this->vect = new double[dim];
+	this->vect[0] = 0 ;
 }
-Dvector::Dvector(int d){
-	Dvector(d, 0.);
-}
-Dvector::Dvector(int d, double val)
+Dvector::Dvector(int d, double val = 0)
 {
 	this->dim = d;
 	this->vect = new double[dim];
@@ -29,6 +29,28 @@ Dvector::Dvector(const Dvector & P){
     vect[i]=P.getVect(i);
   }
 }
+
+Dvector::Dvector(std::string name)
+{
+	std::ifstream file("name");
+	std::vector<double> v(1,0.);
+	std::string buffer ;
+	double val ;
+	if(file)
+	{
+		while(std::getline(file,buffer)){
+			file>>val;
+			v.push_back(val);
+		}
+
+		this->dim = v.size();
+		this->vect = new double[dim];
+		for( int i=0; i < dim ; i++ ){
+			this->vect[i]= v[i];
+		}
+	}
+}
+
 
 
 
