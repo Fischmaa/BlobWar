@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+
+
 Dvector::Dvector()
 {
 	Dvector(0);

@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -O2 -Wall -g
 TARGET = main.o 
-SOURCES = main.cpp
+SOURCES = main.cpp Dvector.cpp
 OBJETS = $(SOURCES:.cxx=.o)
 
 main: main.o
