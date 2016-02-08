@@ -21,25 +21,29 @@ Dvector::Dvector(int d, double val = 0)
 	}
 }
 
-Dvector::Dvector(const Dvector & P){
-  dim=P.size();
-  if(dim == 0) return;
-  vect=new double[dim];
-  for(int i=0;i<dim;i++){
-    vect[i]=P.getVect(i);
-  }
+Dvector::Dvector(const Dvector & P)
+{
+	dim=P.size();
+	if(dim == 0) return;
+	vect=new double[dim];
+	for(int i=0;i<dim;i++){
+		vect[i]=P.getVect(i);
+	}
 }
 
 Dvector::Dvector(std::string name)
 {
-	std::ifstream file("name");
+	std::ifstream file(name.c_str(),std::ios::in);
 	std::vector<double> v(1,0.);
-	std::string buffer ;
 	double val ;
 	if(file)
 	{
-		while(std::getline(file,buffer)){
-			file>>val;
+		this->dim = 0;
+		this->vect = NULL;
+	}
+	else
+	{
+		while(file>>val){
 			v.push_back(val);
 		}
 
@@ -48,34 +52,30 @@ Dvector::Dvector(std::string name)
 		for( int i=0; i < dim ; i++ ){
 			this->vect[i]= v[i];
 		}
+
+		file.close();
 	}
 }
 
 
 
 
-int Dvector::size() const {
-  return dim;
+int Dvector::size() const
+{
+	return dim;
 }
 
 
 
-double Dvector::getVect(int i) const {
-  return vect[i];
+double Dvector::getVect(int i) const
+{
+	return vect[i];
 }
-
-
-
-
-
-
-
 
 Dvector::~Dvector()
 {
 	delete [] vect ;
 }
-
 
 void Dvector::display( std::ostream& str)
 {
@@ -84,12 +84,12 @@ void Dvector::display( std::ostream& str)
 	}
 }
 
-
-void Dvector::fillRandomly (){
-  for(int i=0;i<dim;i++){
-  vect[i]= (double)rand() / (double)RAND_MAX ;
+void Dvector::fillRandomly()
+{
+	for(int i=0;i<dim;i++){
+		vect[i]= (double)rand() / (double)RAND_MAX ;
+	}
 }
 
 
 
-}
