@@ -11,11 +11,11 @@ public:
 	Dvector(const Dvector & P);
 	~Dvector();
 	void display(std::ostream& str);
-	int Getdim();
-	void SetDim(int dim);
-	double* Getvect();
-        void SetVect(double *vect); 
-	void alloc(int d);
+	int  Getdim()const ;
+
+	double Getvect(int i) const;
+  
+
 private:
 	int dim;	
 	double *vect ;

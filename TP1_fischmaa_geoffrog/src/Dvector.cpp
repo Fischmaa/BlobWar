@@ -17,32 +17,28 @@ Dvector::Dvector(int d, double val)
 	}
 }
 
-Dvector::Dvector(Dvector & P){
+Dvector::Dvector(const Dvector & P){
   dim=P.Getdim();
   if(dim == 0) return;
   vect=new double[dim];
   for(int i=0;i<dim;i++){
-    vect[i]=P.Getvect[i];
+    vect[i]=P.Getvect(i);
   }
 }
 
 
 
-int Dvector::Getdim(){
-  return this.dim;
+int Dvector::Getdim() const {
+  return dim;
 }
 
-void Dvector::SetDim(int dim){
-  this.dim=dim;
+
+
+double Dvector::Getvect(int i) const {
+  return vect[i];
 }
 
-double Dvector::Getvect(int i){
-  return this.vect[i];
-}
 
-void Dvector::SetVect(double *vect){
-  this.vect=vect;
-} 
 
 
 
