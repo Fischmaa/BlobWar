@@ -1,14 +1,11 @@
 CXX = g++
 CXXFLAGS = -O2 -Wall -g
-EXECUTABLE = exe 
+TARGET = main.o 
 SOURCES = main.cpp
 OBJETS = $(SOURCES:.cxx=.o)
 
-$(EXECUTABLE): $(OBJETS)
+main: main.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ 
 
-.cxx.o: 
-	$(CXX) $(CXXFLAGS) $< -o $@
-
 clean:
-	rm -f $(EXECUTABLE) *.o
+	rm -f $(TARGET) *.o
