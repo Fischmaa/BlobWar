@@ -1,1 +1,2 @@
-# BlobWar
+# Modélisation et Programmation
+
