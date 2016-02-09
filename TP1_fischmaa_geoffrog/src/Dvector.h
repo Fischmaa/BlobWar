@@ -7,32 +7,32 @@
   * \brief     Définit la base d'une classe vecteur
  */
 
-class Dvector
-{
+  class Dvector
+  {
 
- public:
+  public:
 
 /**
   * \brief      Constructeur par defaut cree un vecteur de taille 1 initialisé à zéro
  */
-	Dvector();
+  Dvector();
 /**
   * \brief      Constructeur ou l'on precise la taille du vecteur et la valeur d'initialisation
   * \param      d        taille du vecteur.
   * \param      val     valeur d'initialisation
  */
-	Dvector(int d, double val);
+  Dvector(int d, double val);
 
 /**
   * \brief   Constructeur par recopie
  */
-	Dvector(const Dvector & P);
+  Dvector(const Dvector & P);
 
 /**
   * \brief   Constructeur à partir d'un fichier
  *
  */
-	Dvector(std::string name);
+ Dvector(std::string name);
 
 
 /**

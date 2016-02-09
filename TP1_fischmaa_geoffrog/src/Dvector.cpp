@@ -34,10 +34,11 @@ Dvector::Dvector(const Dvector & P)
 Dvector::Dvector(std::string name)
 {
 	std::ifstream file(name.c_str(),std::ios::in);
-	std::vector<double> v(1,0.);
+	std::vector<double> v;
 	double val ;
-	if(file)
+	if(!file)
 	{
+		std::cout << "Echec de l'ouverture du fichier : "<< name << "\n";
 		this->dim = 0;
 		this->vect = NULL;
 	}
