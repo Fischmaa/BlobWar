@@ -1,9 +1,9 @@
 MAKE=make
 all:
-	(cd ./src;$(MAKE) all;)
+	cd ./src && $(MAKE) && cd -
 clean:
-	(cd ./src;$(MAKE) clean;)
+	cd ./src && $(MAKE) clean && cd -
 docu:
 	(cd ./docu;$(MAKE);)
 check:
-	(cd ./src;$(MAKE) all;$(TARGET);)
+	cd ./src;$(MAKE) check && cd -

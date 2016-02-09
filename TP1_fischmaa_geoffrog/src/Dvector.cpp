@@ -8,12 +8,14 @@
 
 Dvector::Dvector()
 {
+	std::cout << "Appel de Dvector() \n";
 	this->dim = 1 ;
 	this->vect = new double[dim];
 	this->vect[0] = 0 ;
 }
 Dvector::Dvector(int d, double val = 0)
-{
+{	
+	std::cout << "Appel de Dvector(int d, double val = 0) \n";
 	this->dim = d;
 	this->vect = new double[dim];
 	for( int i=0; i < dim ; i++ ){
@@ -23,6 +25,7 @@ Dvector::Dvector(int d, double val = 0)
 
 Dvector::Dvector(const Dvector & P)
 {
+	std::cout << "Appel de Dvector(const Dvector & P) \n";
 	dim=P.size();
 	if(dim == 0) return;
 	vect=new double[dim];
@@ -33,6 +36,7 @@ Dvector::Dvector(const Dvector & P)
 
 Dvector::Dvector(std::string name)
 {
+	std::cout << "Appel de Dvector(std::string name) \n";
 	std::ifstream file(name.c_str(),std::ios::in);
 	std::vector<double> v;
 	double val ;
