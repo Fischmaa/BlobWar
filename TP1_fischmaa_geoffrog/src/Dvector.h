@@ -40,34 +40,25 @@ class Dvector
  */
 	~Dvector();
 
-=======
- * \brief      Constructeur par lecture de fichier
- */
-Dvector(std::string name);
-/**
- * \brief Destructeur
- */
- ~Dvector();
-
 
 /**
  * \brief    Affiche sur le flux en paramètre le contenu du vecteur
  * \param    str   flux passé en paramètre       
  */
- void display(std::ostream& str);
+	void display(std::ostream& str);
 
 /**
  * \brief   remplit un vecteur avec un générateur uniforme entre O et 1
  */
- void fillRandomly ();
+	void fillRandomly ();
 
- double getVect(int i) const;
+	double getVect(int i) const;
 
 /**
  * \brief     Calcul la taille d'un vecteur
  * \return    Un entier correspondant à la taille du vecteur
  */
- int size() const;
+	int size() const;
 
 private:
 	int dim;	

@@ -1,6 +1,10 @@
 #include "Dvector.h"
 #include <iostream>
 #include <fstream>
+#include <cassert>
+#include <sstream>
+using namespace std;
+
 
 int main()
 {

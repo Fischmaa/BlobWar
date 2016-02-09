@@ -1,14 +1,9 @@
-CXX = g++
-CXXFLAGS = -02 -Wall -g
-EXECUTABLE = exe 
-SOURCES = main.cpp
-OBJETS = $(SOURCES:.cxx=.o)
-
-$(EXECUTABLE): $(OBJETS)
-	$(CXX) $(CXXFLAGS) -o $@ $^ 
-
-.cxx.o: 
-	$(CXX) $(CXXFLAGS) $< -o $@
-
+MAKE=make
+all:
+	(cd ./src;$(MAKE) all;)
 clean:
-	rm -f $(EXECUTABLE) $(OBJETS)
+	(cd ./src;$(MAKE) clean;)
+docu:
+	(cd ./docu;$(MAKE);)
+check:
+	(cd ./src;$(MAKE) all;$(TARGET);)
