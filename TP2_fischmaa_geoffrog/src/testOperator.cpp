@@ -92,6 +92,34 @@ int main()
   assert(str.str() == "5\n7\n");
   cout<<"OK"<<endl;
 
+  cout<<"Début du test de la multiplication d'un vecteur avec scalaire :"<<endl;
+  Dvector W = V*3.0 ;
+  str.str(std::string());
+  W.display(str);
+  assert(str.str() == "15\n21\n");
+  cout<<"OK"<<endl;
+
+  cout<<"Début du test de l'opérateur *=' :"<<endl;
+  W *= 2.0 ;
+  str.str(std::string());
+  W.display(str);
+  assert(str.str() == "30\n42\n");
+  cout<<"OK"<<endl;
+
+  cout<<"Début du test de la divison d'un vecteur avec scalaire :"<<endl;
+  Dvector X = W/5.0 ;
+  str.str(std::string());
+  X.display(str);
+  assert(str.str() == "6\n8.4\n");
+  cout<<"OK"<<endl;
+
+  cout<<"Début du test de l'opérateur /= :"<<endl;
+  X /= 2.0 ;
+  str.str(std::string());
+  X.display(str);
+  assert(str.str() == "3\n4.2\n");
+  cout<<"OK"<<endl;
+
 
 
   return 0;

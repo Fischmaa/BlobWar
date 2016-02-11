@@ -173,4 +173,30 @@ Dvector Dvector::operator-(){
 	return *this ;
 }
 
+Dvector Dvector::operator*(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] *= val;
+	}
+	return *this ;
+}
+
+void Dvector::operator*=(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] *= val;
+	}
+}
+
+Dvector Dvector::operator/(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] /= val;
+	}
+	return *this ;
+}
+
+void Dvector::operator/=(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] /= val;
+	}
+}
+
 

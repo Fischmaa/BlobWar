@@ -82,6 +82,14 @@
 
  Dvector operator-();
 
+ Dvector operator*(const double val);
+
+ Dvector operator/(const double val);
+
+ void operator*=(const double val);
+
+ void operator/=(const double val);
+
 private:
 	int dim;	
 	double *vect ;
