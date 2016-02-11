@@ -10,8 +10,9 @@ Dvector::Dvector()
 {
 	std::cout << "Appel de Dvector() \n";
 	this->dim = 0 ;
-	this->vect = NULL;
+	this->vect = NULL;	
 }
+
 Dvector::Dvector(int d, double val )
 {	
 	std::cout << "Appel de Dvector(int d, double val = 0.0) \n";
