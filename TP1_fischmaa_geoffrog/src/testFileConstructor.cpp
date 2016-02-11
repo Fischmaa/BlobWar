@@ -7,7 +7,9 @@ int main()
 {	
 	cout<<"Début du test du constructeur à partir du fichier tp1_test1.txt."<<endl;
 	std::string name("tp1_test1.txt");
+	//Dvector P = Dvector("tp1_test1.txt"); // marche aussi
 	Dvector P = Dvector(name);
+	assert(P.size()==10);
 	std::stringstream str;
 	P.display(str);
 	//Il y a des arrondis en sortie, ce qui justifie les modifications par rapport au fichier d'entrée.

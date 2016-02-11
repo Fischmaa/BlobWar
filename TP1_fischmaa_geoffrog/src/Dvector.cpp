@@ -9,13 +9,13 @@
 Dvector::Dvector()
 {
 	std::cout << "Appel de Dvector() \n";
-	this->dim = 1 ;
-	this->vect = new double[dim];
-	this->vect[0] = 0 ;
+	this->dim = 0 ;
+	this->vect = NULL;	
 }
-Dvector::Dvector(int d, double val = 0)
+
+Dvector::Dvector(int d, double val )
 {	
-	std::cout << "Appel de Dvector(int d, double val = 0) \n";
+	std::cout << "Appel de Dvector(int d, double val = 0.0) \n";
 	this->dim = d;
 	this->vect = new double[dim];
 	for( int i=0; i < dim ; i++ ){
@@ -34,7 +34,7 @@ Dvector::Dvector(const Dvector & P)
 	}
 }
 
-Dvector::Dvector(std::string name)
+Dvector::Dvector(const std::string& name)
 {
 	std::cout << "Appel de Dvector(std::string name) \n";
 	std::ifstream file(name.c_str(),std::ios::in);
@@ -62,15 +62,10 @@ Dvector::Dvector(std::string name)
 	}
 }
 
-
-
-
 int Dvector::size() const
 {
 	return dim;
 }
-
-
 
 double Dvector::getVect(int i) const
 {
@@ -96,5 +91,8 @@ void Dvector::fillRandomly()
 	}
 }
 
+double Dvector::operator()(int i){	
+	return this->vect[i];
+}
 
 

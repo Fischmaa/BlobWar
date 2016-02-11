@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -Wall -g
-TARGET = simpleConstructor copyConstructor fileConstructor size fill
-SOURCES = testSimpleConstructor.cpp testCopyConstructor.cpp testFileConstructor.cpp testSize.cpp testFill.cpp Dvector.cpp 
+TARGET = simpleConstructor copyConstructor fileConstructor size fill operator
+SOURCES = testOperator.cpp testSimpleConstructor.cpp testCopyConstructor.cpp testFileConstructor.cpp testSize.cpp testFill.cpp Dvector.cpp 
 OBJETS = $(SOURCES:.cpp=.o)
 
 all: $(TARGET)
@@ -20,6 +20,9 @@ size: Dvector.o testSize.o
 
 fill: Dvector.o testFill.o
 	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testFill.o
+
+operator: Dvector.o testOperator.o
+	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testOperator.o
 
 check: $(TARGET)
 	./simpleConstructor && ./copyConstructor && ./fileConstructor && ./size && ./fill

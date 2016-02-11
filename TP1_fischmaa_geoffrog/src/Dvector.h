@@ -21,7 +21,7 @@
   * \param      d        taille du vecteur.
   * \param      val     valeur d'initialisation
  */
-  Dvector(int d, double val);
+  Dvector(int d, double val = 0.0);
 
 /**
   * \brief   Constructeur par recopie
@@ -32,33 +32,35 @@
   * \brief   Constructeur à partir d'un fichier
  *
  */
- Dvector(std::string name);
+ Dvector(const std::string& name);
 
 
 /**
   * \brief   Destructeur
  */
-	~Dvector();
+  ~Dvector();
 
 
 /**
  * \brief    Affiche sur le flux en paramètre le contenu du vecteur
  * \param    str   flux passé en paramètre       
  */
-	void display(std::ostream& str);
+ void display(std::ostream& str);
 
 /**
  * \brief   remplit un vecteur avec un générateur uniforme entre O et 1
  */
-	void fillRandomly ();
+ void fillRandomly ();
 
-	double getVect(int i) const;
+ double getVect(int i) const;
 
 /**
  * \brief     Calcul la taille d'un vecteur
  * \return    Un entier correspondant à la taille du vecteur
  */
-	int size() const;
+ int size() const;
+
+ double operator()(int i);
 
 private:
 	int dim;	
