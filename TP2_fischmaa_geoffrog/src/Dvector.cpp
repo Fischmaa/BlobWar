@@ -199,4 +199,25 @@ void Dvector::operator/=(const double val){
 	}
 }
 
+bool Dvector::operator==(const Dvector elem){
+	if(this->size()!=elem.size()){
+		return false;
+	}
+	else{
+		bool res = true;
+		for(int i = 0 ; i< this->size();i++){
+			if(this->vect[i] != elem.vect[i]){
+				res = false ;
+				i=this->size() - 1 ; // on sort de la boucle for ( a revoir)
+			}
+		}
+		return res;
+	}
+
+}
+
+bool Dvector::operator!=(const Dvector elem){
+	bool res = *this==(elem);
+	return !res;
+}
 

@@ -120,6 +120,22 @@ int main()
   assert(str.str() == "3\n4.2\n");
   cout<<"OK"<<endl;
 
+  cout<<"Début du test de l'opérateur == (cas d'inégalité):"<<endl;
+  assert(!(X == W));
+  cout<<"OK"<<endl;
+
+  cout<<"Début du test de l'opérateur == (cas d'égalité):"<<endl;
+  assert((X == X));
+  cout<<"OK"<<endl;
+
+  cout<<"Début du test de l'opérateur != (cas d'inégalité):"<<endl;
+  assert(X != W);
+  cout<<"OK"<<endl;
+
+  cout<<"Début du test de l'opérateur != (cas d'égalité):"<<endl;
+  assert(!(X != X));
+  cout<<"OK"<<endl;
+
 
 
   return 0;

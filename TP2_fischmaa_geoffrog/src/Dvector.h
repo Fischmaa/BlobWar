@@ -90,6 +90,10 @@
 
  void operator/=(const double val);
 
+ bool operator==(const Dvector elem);
+
+ bool operator!=(const Dvector elem);
+
 private:
 	int dim;	
 	double *vect ;
