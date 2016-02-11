@@ -26,4 +26,9 @@
 *.exe
 *.out
 *.app
-main
+simpleConstructor
+copyConstructor 
+fileConstructor
+size
+fill
+operator

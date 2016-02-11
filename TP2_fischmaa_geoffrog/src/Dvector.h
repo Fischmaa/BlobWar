@@ -60,7 +60,19 @@
  */
  int size() const;
 
- double operator()(int i);
+ double operator()(int i) const;
+
+ double& operator()(int i);
+
+ Dvector operator+(const Dvector& elem);
+
+ void operator+=(const Dvector& elem);
+
+ Dvector operator-(const Dvector& elem);
+
+ void operator-=(const Dvector& elem);
+
+ Dvector operator-();
 
 private:
 	int dim;	

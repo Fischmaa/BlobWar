@@ -5,6 +5,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cassert>
 
 Dvector::Dvector()
 {
@@ -91,8 +92,55 @@ void Dvector::fillRandomly()
 	}
 }
 
-double Dvector::operator()(int i){	
+double Dvector::operator()(int i) const{	
+	assert(i>0 && i<=(this->size()-1));
 	return this->vect[i];
+}
+
+double& Dvector::operator()(int i){
+	assert(i>0 && i<=(this->size()-1));
+	return this->vect[i];
+}
+
+Dvector Dvector::operator+(const Dvector& elem){
+	assert(elem.size() == this->size());
+	Dvector res(this->size());
+	for (int i = 0; i < this->size() ; i++){
+		res.vect[i]=this->vect[i] + elem.vect[i];
+	}
+	return res ;
+}
+
+void Dvector::operator+=(const Dvector&  elem){
+	assert(elem.size() == this->size());
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] += elem.vect[i];
+	}
+
+}
+
+Dvector Dvector::operator-(const Dvector& elem){
+	assert(elem.size() == this->size());
+	Dvector res(this->size());
+	for (int i = 0; i < this->size() ; i++){
+		res.vect[i]=this->vect[i] - elem.vect[i];
+	}
+	return res ;
+}
+
+void Dvector::operator-=(const Dvector&  elem){
+	assert(elem.size() == this->size());
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] -= elem.vect[i];
+	}
+
+}
+
+Dvector Dvector::operator-(){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] = -this->vect[i] ;
+	}
+	return *this ;
 }
 
 
