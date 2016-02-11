@@ -111,10 +111,25 @@ Dvector Dvector::operator+(const Dvector& elem){
 	return res ;
 }
 
+Dvector Dvector::operator+(const double val){
+	Dvector res(this->size());
+	for (int i = 0; i < this->size() ; i++){
+		res.vect[i] = this->vect[i] + val;
+	}
+	return res ;
+}
+
 void Dvector::operator+=(const Dvector&  elem){
 	assert(elem.size() == this->size());
 	for (int i = 0; i < this->size() ; i++){
 		this->vect[i] += elem.vect[i];
+	}
+
+}
+
+void Dvector::operator+=(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] += val;
 	}
 
 }
@@ -128,10 +143,25 @@ Dvector Dvector::operator-(const Dvector& elem){
 	return res ;
 }
 
+Dvector Dvector::operator-(const double val){
+	Dvector res(this->size());
+	for (int i = 0; i < this->size() ; i++){
+		res.vect[i] = this->vect[i] - val;
+	}
+	return res ;
+}
+
 void Dvector::operator-=(const Dvector&  elem){
 	assert(elem.size() == this->size());
 	for (int i = 0; i < this->size() ; i++){
 		this->vect[i] -= elem.vect[i];
+	}
+
+}
+
+void Dvector::operator-=(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] -= val;
 	}
 
 }

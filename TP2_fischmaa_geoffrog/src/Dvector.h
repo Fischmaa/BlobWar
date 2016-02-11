@@ -68,9 +68,17 @@
 
  void operator+=(const Dvector& elem);
 
+ Dvector operator+(const double val);
+
+ void operator+=(const double val);
+
  Dvector operator-(const Dvector& elem);
 
  void operator-=(const Dvector& elem);
+
+ Dvector operator-(const double val);
+
+ void operator-=(const double val);
 
  Dvector operator-();
 
