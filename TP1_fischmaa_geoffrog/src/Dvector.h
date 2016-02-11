@@ -21,7 +21,7 @@
   * \param      d        taille du vecteur.
   * \param      val     valeur d'initialisation
  */
-  Dvector(int d, double val);
+  Dvector(int d, double val = 0.0);
 
 /**
   * \brief   Constructeur par recopie
