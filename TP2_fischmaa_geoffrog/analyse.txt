@@ -1,0 +1,12 @@
+Question 1 : 
+Etant donné que l'on a pas encore surchargé l'opérateur =, lorsque l'on écrit : 
+Dvector x;
+x = Dvector(3,1.);
+
+Le compilateur ne reconnait pas l'opérateur = qui n'est pas définit pour Dvector et donc le programme ne s'execute pas.
+
+En revanche lorsque que l'on écrit : 
+
+Dvector x = Dvector(3,1.);
+
+Ici, on utilise l'opérateur = pour une affectation, donc le compilateur reconnait l'opérateur = et le programme s'execute normalement.
