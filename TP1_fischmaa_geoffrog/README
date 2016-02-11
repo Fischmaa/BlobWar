@@ -1,0 +1,4 @@
+make all : pour compiler tous les tests
+make check : pour compiler puis exécuter tous les tests
+make doc : pour générer la documentation
+make clean : pour nettoyer les dossiers.
