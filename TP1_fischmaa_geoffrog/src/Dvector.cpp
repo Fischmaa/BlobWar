@@ -34,7 +34,7 @@ Dvector::Dvector(const Dvector & P)
 	}
 }
 
-Dvector::Dvector(std::string name)
+Dvector::Dvector(const std::string& name)
 {
 	std::cout << "Appel de Dvector(std::string name) \n";
 	std::ifstream file(name.c_str(),std::ios::in);
@@ -67,8 +67,6 @@ int Dvector::size() const
 	return dim;
 }
 
-
-
 double Dvector::getVect(int i) const
 {
 	return vect[i];
@@ -93,5 +91,8 @@ void Dvector::fillRandomly()
 	}
 }
 
+double Dvector::operator()(int i){	
+	return this->vect[i];
+}
 
 
