@@ -1,6 +1,7 @@
 #ifndef DVECTOR_H
 #define DVECTOR_H
 #include <iostream>
+using namespace std;
 /**
   * \file      Dvector.cpp
   * \author    Adrien et Germain
@@ -53,6 +54,10 @@
  void fillRandomly ();
 
  double getVect(int i) const;
+ 
+ double & access(int i);
+
+ 
 
 /**
  * \brief     Calcul la taille d'un vecteur
@@ -63,42 +68,88 @@
  double operator()(int i) const;
 
  double& operator()(int i);
+ 
+ Dvector& operator=(const Dvector &P);
 
- Dvector operator+(const Dvector& elem);
+ Dvector& operator+=(const Dvector& elem);
+ 
+  Dvector& operator+=(const double val);
 
- void operator+=(const Dvector& elem);
-
- Dvector operator+(const double val);
-
- void operator+=(const double val);
-
- Dvector operator-(const Dvector& elem);
-
- void operator-=(const Dvector& elem);
-
- Dvector operator-(const double val);
-
- void operator-=(const double val);
-
- Dvector operator-();
+ Dvector& operator-=(const Dvector& elem);
+ 
+  Dvector& operator-=(const double val);
 
  Dvector operator*(const double val);
 
  Dvector operator/(const double val);
 
- void operator*=(const double val);
+  Dvector& operator*=(const Dvector& elem);
+  
+  Dvector& operator*=(const double val);
 
  void operator/=(const double val);
 
  bool operator==(const Dvector elem);
 
  bool operator!=(const Dvector elem);
+ 
+ 
+ void resize(int ndim,double val);
+ 
+ 
+ friend Dvector operator+(const Dvector & P,const Dvector & Q);
 
+friend Dvector operator-(const Dvector & P,const Dvector & Q);
+
+friend Dvector operator*(const Dvector & P,const Dvector & Q);
+
+friend Dvector operator+(const double val,const Dvector &P);
+
+friend Dvector operator-(const double val,const Dvector &P);
+
+friend Dvector operator*(const double val,const Dvector &P);
+ 
+friend Dvector operator+(const Dvector &P,const double val);
+
+friend Dvector operator-(const Dvector &P,const double val);
+
+friend Dvector operator*(const Dvector &P,const double val);
+
+friend ostream & operator <<(ostream &OPut, const Dvector &P);
+
+friend istream & operator >>(istream& Stream, Dvector &P);
+
+
+ double* getAdressVect() const;
 private:
 	int dim;	
 	double *vect ;
 
 };
+
+Dvector operator+(const Dvector & P,const Dvector & Q);
+
+Dvector operator-(const Dvector & P,const Dvector & Q);
+
+Dvector operator*(const Dvector & P,const Dvector & Q);
+
+Dvector operator+(const double val,const Dvector &P);
+
+Dvector operator+(const Dvector &P,const double val);
+
+Dvector operator-(const double val,const Dvector &P);
+
+Dvector operator-(const Dvector &P,const double val);
+
+
+Dvector operator*(const double val,const Dvector &P);
+
+Dvector operator*(const Dvector &P,const double val);
+
+
+ostream & operator <<(ostream &OPut, const Dvector &P);
+
+istream & operator >>(istream& Stream,  Dvector &P);
 
 
 #endif

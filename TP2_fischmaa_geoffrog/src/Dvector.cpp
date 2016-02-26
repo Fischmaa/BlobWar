@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 #include <cassert>
-
+using namespace std;
 Dvector::Dvector()
 {
 	std::cout << "Appel de Dvector() \n";
@@ -63,6 +63,10 @@ Dvector::Dvector(const std::string& name)
 	}
 }
 
+double* Dvector::getAdressVect() const{
+    return this->vect;
+     }
+
 int Dvector::size() const
 {
 	return dim;
@@ -72,6 +76,12 @@ double Dvector::getVect(int i) const
 {
 	return vect[i];
 }
+
+double & Dvector::access(int i){
+    return vect[i];
+}
+
+
 
 Dvector::~Dvector()
 {
@@ -93,105 +103,69 @@ void Dvector::fillRandomly()
 }
 
 double Dvector::operator()(int i) const{	
-	assert(i>0 && i<=(this->size()-1));
+	assert(i>=0 && i<=(this->size()-1));
 	return this->vect[i];
 }
 
 double& Dvector::operator()(int i){
-	assert(i>0 && i<=(this->size()-1));
+	assert(i>=0 && i<=(this->size()-1));
 	return this->vect[i];
 }
 
-Dvector Dvector::operator+(const Dvector& elem){
+Dvector& Dvector::operator=(const Dvector &P){
+    dim=P.size();
+    vect=new double[dim];
+    memcpy(vect,P.getAdressVect(),dim*sizeof(double));
+    return *this;
+}
+
+Dvector& Dvector::operator+=(const Dvector&  elem){
 	assert(elem.size() == this->size());
-	Dvector res(this->size());
+        Dvector &P=*this;
 	for (int i = 0; i < this->size() ; i++){
-		res.vect[i]=this->vect[i] + elem.vect[i];
+		P(i) += elem(i);
 	}
-	return res ;
+        return P;
 }
 
-Dvector Dvector::operator+(const double val){
-	Dvector res(this->size());
-	for (int i = 0; i < this->size() ; i++){
-		res.vect[i] = this->vect[i] + val;
-	}
-	return res ;
-}
-
-void Dvector::operator+=(const Dvector&  elem){
-	assert(elem.size() == this->size());
-	for (int i = 0; i < this->size() ; i++){
-		this->vect[i] += elem.vect[i];
-	}
-
-}
-
-void Dvector::operator+=(const double val){
+Dvector& Dvector::operator+=(const double val){
 	for (int i = 0; i < this->size() ; i++){
 		this->vect[i] += val;
 	}
-
+        return *this;
 }
 
-Dvector Dvector::operator-(const Dvector& elem){
-	assert(elem.size() == this->size());
-	Dvector res(this->size());
-	for (int i = 0; i < this->size() ; i++){
-		res.vect[i]=this->vect[i] - elem.vect[i];
-	}
-	return res ;
-}
-
-Dvector Dvector::operator-(const double val){
-	Dvector res(this->size());
-	for (int i = 0; i < this->size() ; i++){
-		res.vect[i] = this->vect[i] - val;
-	}
-	return res ;
-}
-
-void Dvector::operator-=(const Dvector&  elem){
+Dvector& Dvector::operator-=(const Dvector&  elem){
 	assert(elem.size() == this->size());
 	for (int i = 0; i < this->size() ; i++){
-		this->vect[i] -= elem.vect[i];
+		this->vect[i] -= elem(i);
 	}
-
+        return *this;
 }
 
-void Dvector::operator-=(const double val){
+Dvector& Dvector::operator-=(const double val){
 	for (int i = 0; i < this->size() ; i++){
 		this->vect[i] -= val;
 	}
-
+        return *this;
 }
 
-Dvector Dvector::operator-(){
+Dvector& Dvector::operator*=(const Dvector& elem){
+    	assert(elem.size() == this->size());
 	for (int i = 0; i < this->size() ; i++){
-		this->vect[i] = -this->vect[i] ;
+		this->vect[i]*=elem(i);
 	}
-	return *this ;
+        return *this;
 }
 
-Dvector Dvector::operator*(const double val){
-	for (int i = 0; i < this->size() ; i++){
-		this->vect[i] *= val;
-	}
-	return *this ;
-}
-
-void Dvector::operator*=(const double val){
+Dvector& Dvector::operator*=(const double val){
 	for (int i = 0; i < this->size() ; i++){
 		this->vect[i] *= val;
 	}
+        return *this;
 }
 
-Dvector Dvector::operator/(const double val){
-	for (int i = 0; i < this->size() ; i++){
-		this->vect[i] /= val;
-	}
-	return *this ;
-}
+
 
 void Dvector::operator/=(const double val){
 	for (int i = 0; i < this->size() ; i++){
@@ -221,3 +195,92 @@ bool Dvector::operator!=(const Dvector elem){
 	return !res;
 }
 
+
+ void Dvector::resize(int ndim,double val){
+     if (ndim>dim){
+         double *temp=new double[ndim];
+          memcpy(temp,vect,dim*sizeof(double));
+          for(int i=dim;i<ndim;i++){
+              temp[i]=val;
+          }
+          vect=temp;
+     }
+     dim=ndim;
+ }
+
+
+
+
+Dvector operator+(const Dvector & P,const Dvector & Q){
+    Dvector R(P);
+    R+=Q;
+    return R;
+}
+
+Dvector operator-(const Dvector & P,const Dvector & Q){
+    Dvector R(P);
+    R-=Q;
+    return R;
+}
+
+
+Dvector operator*(const Dvector & P,const Dvector & Q){
+    Dvector R(P);
+    R*=Q;
+    return R;
+}
+
+
+
+
+Dvector operator+(const double val,const Dvector &P){
+    	Dvector res(P);
+        res+=val;
+	return res ;
+}
+
+Dvector operator+(const Dvector &P,const double val){
+    return val+P;
+}
+
+Dvector operator*(const double val,const Dvector &P){
+    	Dvector res(P);
+        res*=val;
+        return res;
+}
+
+Dvector operator*(const Dvector &P,const double val){
+    return val*P;
+}
+
+
+Dvector operator-(const double val,const Dvector &P){
+    return (-1)*P+val;
+}
+
+
+Dvector operator-(const Dvector &P,const double val){
+        Dvector res(P);
+        res-=val;
+        return res;
+}
+
+ostream & operator <<(ostream &OPut, const Dvector &P)
+{
+OPut<<"Vecteur : ";
+for(int i=0;i<P.size();i++){ 
+    OPut<<P(i)<<" " ; 
+}
+OPut<<endl;
+return OPut;
+}
+
+
+
+istream & operator >>(istream& Stream, Dvector &P)
+{
+    for(int i=0;i<P.size();i++){ 
+        Stream>>P(i); 
+    }
+    return Stream;
+}

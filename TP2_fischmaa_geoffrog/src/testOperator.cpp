@@ -35,109 +35,98 @@ int main()
   R.display(str);
   assert(str.str() == "2\n4\n");
   cout<<"OK"<<endl;
+  
+   cout<<"Debut du test de l'addition de deux vecteurs sur un des deux':"<<endl;
+   
+   R = R + Q ;
+ 
+  
+  str.str(std::string());
+  R.display(str);
+  assert(str.str() == "3\n7\n");
+  cout<<"OK"<<endl;
 
+ 
   cout<<"Debut du test de l'opérateur += avec un vecteur:"<<endl;
   R += P ;
   str.str(std::string());
   R.display(str);
-  assert(str.str() == "3\n5\n");
+  assert(str.str() == "4\n8\n");
   cout<<"OK"<<endl;
 
-   cout<<"Debut du test de la soustraction de deux vecteurs':"<<endl;
-  Dvector S = P - Q ;
+  
+   cout<<"Debut du test de l'opérateur -= avec un vecteur:"<<endl;
+  R -= P ;
   str.str(std::string());
-  S.display(str);
-  assert(str.str() == "0\n-2\n");
+  R.display(str);
+  assert(str.str() == "3\n7\n");
   cout<<"OK"<<endl;
-
-  cout<<"Debut du test de l'opérateur -= avec un vecteur:"<<endl;
-  S -= P ;
+  
+   cout<<"Debut du test de l'opérateur - avec un vecteur:"<<endl;
+  R = R-P ;
   str.str(std::string());
-  S.display(str);
-  assert(str.str() == "-1\n-3\n");
+  R.display(str);
+  assert(str.str() == "2\n6\n");
   cout<<"OK"<<endl;
-
-  cout<<"Debut du test de l'opérateur unaire -:"<<endl;
-  Dvector T = -S;
+          
+       
+     cout<<"Debut du test de l'opérateur *= avec un vecteur:"<<endl;
+  R *= P;
   str.str(std::string());
-  T.display(str);
-  assert(str.str() == "1\n3\n");
+  R.display(str);
+  assert(str.str() == "2\n6\n");
   cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'addition d'un vecteur avec un scalaire ( homogénéité ?? ):"<<endl;
-  Dvector U = T + 3.0 ;
+     
+  
+  
+     cout<<"Debut du test de l'opérateur * avec un vecteur:"<<endl;
+  R = R*P ;
   str.str(std::string());
-  U.display(str);
-  assert(str.str() == "4\n6\n");
+  R.display(str);
+  assert(str.str() == "2\n6\n");
   cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'opérateur += avec un scalaire ( homogénéité ?? ):"<<endl;
-  U += 3.0 ;
+  
+  
+      cout<<"Debut du test de l'opérateur + avec un reel en externe:"<<endl;
+  R = R+1;
   str.str(std::string());
-  U.display(str);
-  assert(str.str() == "7\n9\n");
+  R.display(str);
+  assert(str.str() == "3\n7\n");
   cout<<"OK"<<endl;
-
-  cout<<"Début du test de la soustraction d'un vecteur avec un scalaire ( homogénéité ?? ):"<<endl;
-  Dvector V = U - 1.0 ;
+  
+       cout<<"Debut du test de l'opérateur * avec un reel en externe:"<<endl;
+  R = 2*R ;
   str.str(std::string());
-  V.display(str);
-  assert(str.str() == "6\n8\n");
+  R.display(str);
+  assert(str.str() == "6\n14\n");
   cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'opérateur += avec un scalaire ( homogénéité ?? ):"<<endl;
-  V -= 1.0 ;
+  
+        cout<<"Debut du test de l'opérateur - avec un reel en externe:"<<endl;
+  R = R-1 ;
   str.str(std::string());
-  V.display(str);
-  assert(str.str() == "5\n7\n");
+  R.display(str);
+  cout<<str;
+  assert(str.str() == "5\n13\n");
   cout<<"OK"<<endl;
+  /*
+          cout<<"Debut du test de redirection vers sortie standard:"<<endl;
 
-  cout<<"Début du test de la multiplication d'un vecteur avec scalaire :"<<endl;
-  Dvector W = V*3.0 ;
+cout<<"R doit valoir R puis 13"<<R;
+cin.width(1);
+cin>>R;
+cout<<R;
+*/
+
+
+        cout<<"Debut du test de resize:"<<endl;
+  R.resize(4,7);
   str.str(std::string());
-  W.display(str);
-  assert(str.str() == "15\n21\n");
+  R.display(str);
+  cout<<str<<endl;
+  assert(str.str() == "5\n13\n7\n7\n");
   cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'opérateur *=' :"<<endl;
-  W *= 2.0 ;
-  str.str(std::string());
-  W.display(str);
-  assert(str.str() == "30\n42\n");
-  cout<<"OK"<<endl;
-
-  cout<<"Début du test de la divison d'un vecteur avec scalaire :"<<endl;
-  Dvector X = W/5.0 ;
-  str.str(std::string());
-  X.display(str);
-  assert(str.str() == "6\n8.4\n");
-  cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'opérateur /= :"<<endl;
-  X /= 2.0 ;
-  str.str(std::string());
-  X.display(str);
-  assert(str.str() == "3\n4.2\n");
-  cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'opérateur == (cas d'inégalité):"<<endl;
-  assert(!(X == W));
-  cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'opérateur == (cas d'égalité):"<<endl;
-  assert((X == X));
-  cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'opérateur != (cas d'inégalité):"<<endl;
-  assert(X != W);
-  cout<<"OK"<<endl;
-
-  cout<<"Début du test de l'opérateur != (cas d'égalité):"<<endl;
-  assert(!(X != X));
-  cout<<"OK"<<endl;
-
-
 
   return 0;
   
 }
+ 
