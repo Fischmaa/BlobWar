@@ -2,3 +2,8 @@ make all : pour compiler tous les tests
 make check : pour compiler puis exécuter tous les tests
 make doc : pour générer la documentation
 make clean : pour nettoyer les dossiers.
+
+
+Question 2)
+
+La première utilisation prend en paramètre les objets Dvector par recopie ce qui n’est pas très bien étant donné que ceux sont des objets lourd, il faut mieux les passer par référence comme il est fait dans la  deuxième méthode, et les passer en const car on ne va pas modifier les paramètres mais seulement les lire.
