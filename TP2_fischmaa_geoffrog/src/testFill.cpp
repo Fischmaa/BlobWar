@@ -11,7 +11,7 @@ int main()
   Dvector P(4,3.5);
   P.fillRandomly(); 
   for(int i=0;i<P.size();i++){
-    if (P.getVect(i)<0 || P.getVect(i)>1){
+    if (P(i)<0 || P(i)>1){
       assert(1==0);
     }
   }  

@@ -52,12 +52,8 @@ using namespace std;
  * \brief   remplit un vecteur avec un générateur uniforme entre O et 1
  */
  void fillRandomly ();
-
- double getVect(int i) const;
  
- double & access(int i);
-
- 
+  double* getAdressVect() const;
 
 /**
  * \brief     Calcul la taille d'un vecteur
@@ -73,46 +69,42 @@ using namespace std;
 
  Dvector& operator+=(const Dvector& elem);
  
-  Dvector& operator+=(const double val);
+ Dvector& operator+=(const double val);
 
  Dvector& operator-=(const Dvector& elem);
  
-  Dvector& operator-=(const double val);
+ Dvector& operator-=(const double val);
 
- Dvector operator*(const double val);
-
- Dvector operator/(const double val);
-
-  Dvector& operator*=(const Dvector& elem);
+ Dvector& operator*=(const Dvector& elem);
   
-  Dvector& operator*=(const double val);
+ Dvector& operator*=(const double val);
 
- void operator/=(const double val);
+ void operator/=(const double val) ;
 
- bool operator==(const Dvector elem);
+ bool operator==(const Dvector &elem) const;
 
- bool operator!=(const Dvector elem);
- 
+ bool operator!=(const Dvector &elem) const;
  
  void resize(int ndim,double val);
  
+friend Dvector operator/(const Dvector & P,const double val);
  
- friend Dvector operator+(const Dvector & P,const Dvector & Q);
-
-friend Dvector operator-(const Dvector & P,const Dvector & Q);
-
-friend Dvector operator*(const Dvector & P,const Dvector & Q);
+friend Dvector operator+(const Dvector & P,const Dvector & Q);
 
 friend Dvector operator+(const double val,const Dvector &P);
 
-friend Dvector operator-(const double val,const Dvector &P);
-
-friend Dvector operator*(const double val,const Dvector &P);
- 
 friend Dvector operator+(const Dvector &P,const double val);
+
+friend Dvector operator-(const Dvector & P,const Dvector & Q);
+
+friend Dvector operator-(const double val,const Dvector &P);
 
 friend Dvector operator-(const Dvector &P,const double val);
 
+friend Dvector operator*(const Dvector & P,const Dvector & Q);
+
+friend Dvector operator*(const double val,const Dvector &P);
+ 
 friend Dvector operator*(const Dvector &P,const double val);
 
 friend ostream & operator <<(ostream &OPut, const Dvector &P);
@@ -120,27 +112,28 @@ friend ostream & operator <<(ostream &OPut, const Dvector &P);
 friend istream & operator >>(istream& Stream, Dvector &P);
 
 
- double* getAdressVect() const;
+
 private:
 	int dim;	
 	double *vect ;
 
 };
 
+Dvector operator/(const Dvector & P,const double val);
+
 Dvector operator+(const Dvector & P,const Dvector & Q);
-
-Dvector operator-(const Dvector & P,const Dvector & Q);
-
-Dvector operator*(const Dvector & P,const Dvector & Q);
 
 Dvector operator+(const double val,const Dvector &P);
 
 Dvector operator+(const Dvector &P,const double val);
 
+Dvector operator-(const Dvector & P,const Dvector & Q);
+
 Dvector operator-(const double val,const Dvector &P);
 
 Dvector operator-(const Dvector &P,const double val);
 
+Dvector operator*(const Dvector & P,const Dvector & Q);
 
 Dvector operator*(const double val,const Dvector &P);
 

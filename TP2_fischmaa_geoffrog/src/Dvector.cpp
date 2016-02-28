@@ -27,12 +27,8 @@ Dvector::Dvector(int d, double val )
 Dvector::Dvector(const Dvector & P)
 {
 	std::cout << "Appel de Dvector(const Dvector & P) \n";
-	dim=P.size();
-	if(dim == 0) return;
-	vect=new double[dim];
-	for(int i=0;i<dim;i++){
-		vect[i]=P.getVect(i);
-	}
+        *this=P;
+
 }
 
 Dvector::Dvector(const std::string& name)
@@ -71,17 +67,6 @@ int Dvector::size() const
 {
 	return dim;
 }
-
-double Dvector::getVect(int i) const
-{
-	return vect[i];
-}
-
-double & Dvector::access(int i){
-    return vect[i];
-}
-
-
 
 Dvector::~Dvector()
 {
@@ -167,30 +152,28 @@ Dvector& Dvector::operator*=(const double val){
 
 
 
-void Dvector::operator/=(const double val){
+void Dvector::operator/=(const double val) {
 	for (int i = 0; i < this->size() ; i++){
 		this->vect[i] /= val;
 	}
 }
 
-bool Dvector::operator==(const Dvector elem){
+bool Dvector::operator==(const Dvector& elem) const{
 	if(this->size()!=elem.size()){
 		return false;
 	}
 	else{
-		bool res = true;
 		for(int i = 0 ; i< this->size();i++){
 			if(this->vect[i] != elem.vect[i]){
-				res = false ;
-				i=this->size() - 1 ; // on sort de la boucle for ( a revoir)
+                            return false;
 			}
 		}
-		return res;
+		return true;;
 	}
 
 }
 
-bool Dvector::operator!=(const Dvector elem){
+bool Dvector::operator!=(const Dvector& elem) const{
 	bool res = *this==(elem);
 	return !res;
 }
@@ -203,12 +186,17 @@ bool Dvector::operator!=(const Dvector elem){
           for(int i=dim;i<ndim;i++){
               temp[i]=val;
           }
+          delete vect;
           vect=temp;
      }
      dim=ndim;
  }
 
-
+Dvector operator/(const Dvector &P,const double val){
+    	Dvector res(P);
+        res/=val;
+        return res;
+}
 
 
 Dvector operator+(const Dvector & P,const Dvector & Q){
@@ -216,22 +204,6 @@ Dvector operator+(const Dvector & P,const Dvector & Q){
     R+=Q;
     return R;
 }
-
-Dvector operator-(const Dvector & P,const Dvector & Q){
-    Dvector R(P);
-    R-=Q;
-    return R;
-}
-
-
-Dvector operator*(const Dvector & P,const Dvector & Q){
-    Dvector R(P);
-    R*=Q;
-    return R;
-}
-
-
-
 
 Dvector operator+(const double val,const Dvector &P){
     	Dvector res(P);
@@ -243,16 +215,11 @@ Dvector operator+(const Dvector &P,const double val){
     return val+P;
 }
 
-Dvector operator*(const double val,const Dvector &P){
-    	Dvector res(P);
-        res*=val;
-        return res;
+Dvector operator-(const Dvector & P,const Dvector & Q){
+    Dvector R(P);
+    R-=Q;
+    return R;
 }
-
-Dvector operator*(const Dvector &P,const double val){
-    return val*P;
-}
-
 
 Dvector operator-(const double val,const Dvector &P){
     return (-1)*P+val;
@@ -265,6 +232,24 @@ Dvector operator-(const Dvector &P,const double val){
         return res;
 }
 
+
+Dvector operator*(const Dvector & P,const Dvector & Q){
+    Dvector R(P);
+    R*=Q;
+    return R;
+}
+
+
+Dvector operator*(const double val,const Dvector &P){
+    	Dvector res(P);
+        res*=val;
+        return res;
+}
+
+Dvector operator*(const Dvector &P,const double val){
+    return val*P;
+}
+
 ostream & operator <<(ostream &OPut, const Dvector &P)
 {
 OPut<<"Vecteur : ";
@@ -274,8 +259,6 @@ for(int i=0;i<P.size();i++){
 OPut<<endl;
 return OPut;
 }
-
-
 
 istream & operator >>(istream& Stream, Dvector &P)
 {
