@@ -28,8 +28,12 @@ Dvector::Dvector(int d, double val )
 Dvector::Dvector(const Dvector & P)
 {
 	std::cout << "Appel de Dvector(const Dvector & P) \n";
-        *this=P;
-
+        dim=P.size();
+	if(dim == 0) return;
+	vect=new double[dim];
+	for(int i=0;i<dim;i++){
+		vect[i]=P(i);
+	}
 }
 
 Dvector::Dvector(const std::string& name)
@@ -99,8 +103,7 @@ double& Dvector::operator()(int i){
 }
 
 Dvector& Dvector::operator=(const Dvector &P){
-    dim=P.size();
-    vect=new double[dim];
+    assert(dim==P.size());
     std::memcpy(vect,P.getAdressVect(),dim*sizeof(double));
     return *this;
 }
@@ -187,7 +190,7 @@ bool Dvector::operator!=(const Dvector& elem) const{
          for(int i=dim;i<ndim;i++){
          	temp[i]=val;
          }
-         delete vect;
+         delete [] vect;
          vect=temp;
      }
      dim=ndim;
