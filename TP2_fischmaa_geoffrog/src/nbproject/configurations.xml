@@ -41,6 +41,10 @@
       </makefileType>
       <item path="Dvector.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="testChevron.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testComparaisonEgal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="testCopyConstructor.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="testFileConstructor.cpp" ex="false" tool="1" flavor2="0">
@@ -52,6 +56,8 @@
       <item path="testSimpleConstructor.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="testSize.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="testresize.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

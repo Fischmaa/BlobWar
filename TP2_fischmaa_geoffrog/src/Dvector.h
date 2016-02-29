@@ -85,6 +85,11 @@ using namespace std;
 
  bool operator!=(const Dvector &elem) const;
  
+ /**
+   * \brief     Redimensionne un vecteur
+   *\param      ndim nouvelle taille du vecteur
+   * \param      val     valeur d'initialisation des nouveaux indices
+   */
  void resize(int ndim,double val);
 
  Dvector operator-();

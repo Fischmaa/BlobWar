@@ -84,13 +84,29 @@ void Dvector::display( std::ostream& str)
 		str << this->vect[i] << "\n" ;
 	}
 }
-
+/*
 void Dvector::fillRandomly()
 {
 	for(int i=0;i<dim;i++){
 		vect[i]= (double)rand() / (double)RAND_MAX ;
 	}
 }
+*/
+
+void Dvector::fillRandomly() {
+    static bool init = false;
+    if (!init) {
+        init = true;
+        srand(time(NULL)); // Initialisation pour rand
+    }
+
+    // Generateur de nombre aleatoire
+    for (int i = 0; i < dim; i++) {
+        vect[i] = rand() / (double) RAND_MAX; // Loi Uniforme entre 0 et 1
+    }
+}
+
+
 
 double Dvector::operator()(int i) const{	
 	assert(i>=0 && i<=(this->size()-1));
@@ -107,6 +123,14 @@ Dvector& Dvector::operator=(const Dvector &P){
     std::memcpy(vect,P.getAdressVect(),dim*sizeof(double));
     return *this;
 }
+/*
+Dvector& Dvector::operator=(const Dvector &P){
+    assert(dim==P.size());
+    for(int i=0;i<dim;i++){
+    vect[i]=P(i);
+    }
+    return *this;
+}*/
 
 Dvector& Dvector::operator+=(const Dvector&  elem){
 	assert(elem.size() == this->size());
