@@ -1,9 +1,10 @@
 #include "Dvector.h"
 #include <ctime>
 #include <cstdlib>
+#include <cstring>
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <string> 
 #include <vector>
 #include <cassert>
 using namespace std;
@@ -100,7 +101,7 @@ double& Dvector::operator()(int i){
 Dvector& Dvector::operator=(const Dvector &P){
     dim=P.size();
     vect=new double[dim];
-    memcpy(vect,P.getAdressVect(),dim*sizeof(double));
+    std::memcpy(vect,P.getAdressVect(),dim*sizeof(double));
     return *this;
 }
 
@@ -182,7 +183,7 @@ bool Dvector::operator!=(const Dvector& elem) const{
  void Dvector::resize(int ndim,double val){
      if (ndim>dim){
          double *temp=new double[ndim];
-          memcpy(temp,vect,dim*sizeof(double));
+          std::memcpy(temp,vect,dim*sizeof(double));
           for(int i=dim;i<ndim;i++){
               temp[i]=val;
           }
@@ -230,6 +231,13 @@ Dvector operator-(const Dvector &P,const double val){
         Dvector res(P);
         res-=val;
         return res;
+}
+
+Dvector Dvector::operator-(){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] = -this->vect[i] ;
+	}
+	return *this ;
 }
 
 

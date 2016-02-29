@@ -101,6 +101,8 @@ friend Dvector operator-(const double val,const Dvector &P);
 
 friend Dvector operator-(const Dvector &P,const double val);
 
+Dvector operator-();
+
 friend Dvector operator*(const Dvector & P,const Dvector & Q);
 
 friend Dvector operator*(const double val,const Dvector &P);
