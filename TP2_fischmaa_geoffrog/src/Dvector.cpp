@@ -183,12 +183,12 @@ bool Dvector::operator!=(const Dvector& elem) const{
  void Dvector::resize(int ndim,double val){
      if (ndim>dim){
          double *temp=new double[ndim];
-          std::memcpy(temp,vect,dim*sizeof(double));
-          for(int i=dim;i<ndim;i++){
-              temp[i]=val;
-          }
-          delete vect;
-          vect=temp;
+         std::memcpy(temp,vect,dim*sizeof(double));
+         for(int i=dim;i<ndim;i++){
+         	temp[i]=val;
+         }
+         delete vect;
+         vect=temp;
      }
      dim=ndim;
  }

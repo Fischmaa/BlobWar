@@ -86,6 +86,8 @@ using namespace std;
  bool operator!=(const Dvector &elem) const;
  
  void resize(int ndim,double val);
+
+ Dvector operator-();
  
 friend Dvector operator/(const Dvector & P,const double val);
  
@@ -100,8 +102,6 @@ friend Dvector operator-(const Dvector & P,const Dvector & Q);
 friend Dvector operator-(const double val,const Dvector &P);
 
 friend Dvector operator-(const Dvector &P,const double val);
-
-Dvector operator-();
 
 friend Dvector operator*(const Dvector & P,const Dvector & Q);
 
