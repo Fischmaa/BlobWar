@@ -88,7 +88,7 @@ void Dvector::display( std::ostream& str)
 void Dvector::fillRandomly()
 {
 	for(int i=0;i<dim;i++){
-		vect[i]= (double)rand() / (double)RAND_MAX ;
+		vect[i]= (double)rand() / (double)RAND_MAX ;"
 	}
 }
 */
@@ -237,6 +237,11 @@ Dvector operator+(const double val,const Dvector &P){
     	Dvector res(P);
         res+=val;
 	return res ;
+        
+        //a+b cest un nouvel objet on renvoie un nouvel objet
+        //res va etre detruit car cest local donc on peut pas renvoyer de reference dessus
+        //la seule possibilite serais de renvoyer une reference sur this mais ca na pas de sens
+        // reference sur += car on veut chainer le truc
 }
 
 Dvector operator+(const Dvector &P,const double val){
