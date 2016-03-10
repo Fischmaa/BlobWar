@@ -4,12 +4,15 @@
     <df root="." name="0">
       <in>Dvector.cpp</in>
       <in>Dvector.h</in>
+      <in>testChevron.cpp</in>
+      <in>testComparaisonEgal.cpp</in>
       <in>testCopyConstructor.cpp</in>
       <in>testFileConstructor.cpp</in>
       <in>testFill.cpp</in>
       <in>testOperator.cpp</in>
       <in>testSimpleConstructor.cpp</in>
       <in>testSize.cpp</in>
+      <in>testresize.cpp</in>
     </df>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

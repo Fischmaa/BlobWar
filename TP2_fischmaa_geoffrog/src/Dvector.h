@@ -46,7 +46,7 @@ using namespace std;
  * \brief    Affiche sur le flux en paramètre le contenu du vecteur
  * \param    str   flux passé en paramètre       
  */
- void display(std::ostream& str);
+ void display(std::ostream& str) const;
 
 /**
  * \brief   remplit un vecteur avec un générateur uniforme entre O et 1

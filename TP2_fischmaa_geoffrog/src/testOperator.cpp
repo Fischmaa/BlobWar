@@ -116,6 +116,25 @@ int main()
    R.display(str);
    assert(str.str() == "2\n6\n");
    cout<<"OK"<<endl;
+   
+   
+     cout<<"Debut du test de l'opérateur = avec un vecteur:"<<endl;
+   Dvector T(1,3);
+   T=P;
+   str.str(std::string());
+   R.display(str);
+   assert(str.str() == "2\n6\n");
+   T.resize(7,8);
+   T=P;
+   str.str(std::string());
+   R.display(str);
+   assert(str.str() == "2\n6\n");
+   T.resize(2,0);
+   T=P;
+   str.str(std::string());
+   R.display(str);
+   assert(str.str() == "2\n6\n");
+   cout<<"OK"<<endl;
 
 
    cout<<"Debut du test de l'opérateur + avec un reel en externe:"<<endl;
@@ -145,20 +164,7 @@ int main()
    R.display(str);
    assert(str.str() == "-5\n-13\n");
    cout<<"OK"<<endl;
-  /*
-  cout<<"Debut du test de redirection vers sortie standard:"<<endl;
 
-   cout<<"R doit valoir R puis 13"<<R;
-   cin.width(1);
-   cin>>R;
-   cout<<R;*/
-
-   cout<<"Debut du test de resize:"<<endl;
-   R.resize(4,7);
-   str.str(std::string());
-   R.display(str);
-   assert(str.str() == "-5\n-13\n7\n7\n");
-   cout<<"OK"<<endl;
 
   return 0;
   

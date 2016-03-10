@@ -19,6 +19,9 @@ Dvector::Dvector(int d, double val )
 {	
 	std::cout << "Appel de Dvector(int d, double val = 0.0) \n";
 	this->dim = d;
+        if(dim==0){
+            this->vect=NULL;
+        }
 	this->vect = new double[dim];
 	for( int i=0; i < dim ; i++ ){
 		this->vect[i]= val;
@@ -29,7 +32,10 @@ Dvector::Dvector(const Dvector & P)
 {
 	std::cout << "Appel de Dvector(const Dvector & P) \n";
         dim=P.size();
-	if(dim == 0) return;
+	if(dim == 0){
+            this->dim = 0;
+            this->vect = NULL;
+        }
 	vect=new double[dim];
 	for(int i=0;i<dim;i++){
 		vect[i]=P(i);
@@ -78,20 +84,13 @@ Dvector::~Dvector()
 	delete [] vect ;
 }
 
-void Dvector::display( std::ostream& str)
+void Dvector::display( std::ostream& str) const
 {
 	for (int i = 0; i < dim ; i++){
 		str << this->vect[i] << "\n" ;
 	}
 }
-/*
-void Dvector::fillRandomly()
-{
-	for(int i=0;i<dim;i++){
-		vect[i]= (double)rand() / (double)RAND_MAX ;"
-	}
-}
-*/
+
 
 void Dvector::fillRandomly() {
     static bool init = false;
@@ -119,10 +118,16 @@ double& Dvector::operator()(int i){
 }
 
 Dvector& Dvector::operator=(const Dvector &P){
-    assert(dim==P.size());
-    std::memcpy(vect,P.getAdressVect(),dim*sizeof(double));
-    return *this;
-}
+    if(dim!=P.size()){
+        this->resize(P.size(),0);
+        }
+        std::memcpy(vect,P.getAdressVect(),dim*sizeof(double));
+        return *this;
+    }
+ 
+        
+   
+
 /*
 Dvector& Dvector::operator=(const Dvector &P){
     assert(dim==P.size());
@@ -292,18 +297,20 @@ Dvector operator*(const Dvector &P,const double val){
 
 ostream & operator <<(ostream &OPut, const Dvector &P)
 {
-OPut<<"Vecteur : ";
-for(int i=0;i<P.size();i++){ 
-    OPut<<P(i)<<" " ; 
-}
-OPut<<endl;
-return OPut;
+    P.display(OPut);
+    return OPut;
 }
 
+// a tripatouiller
+/*
 istream & operator >>(istream& Stream, Dvector &P)
 {
+ 
+    std::string str;
     for(int i=0;i<P.size();i++){ 
-        Stream>>P(i); 
+        getline( Stream, str );
+        P(i) = atof(str);
+        
     }
     return Stream;
-}
+}*/
