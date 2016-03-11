@@ -157,13 +157,14 @@ int main()
    R.display(str);
    assert(str.str() == "5\n13\n");
    cout<<"OK"<<endl;
-
+/*
    cout<<"Debut du test de l'opérateur - :"<<endl;
-   R = -R ;
+    R.Darray:operator - (R);
    str.str(std::string());
    R.display(str);
    assert(str.str() == "-5\n-13\n");
-   cout<<"OK"<<endl;
+   cout<<"OK"<<endl;*/
+   /*R.Darray::operator=(-R);*/
 
 
   return 0;

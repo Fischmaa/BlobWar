@@ -1,6 +1,7 @@
 #ifndef DVECTOR_H
 #define DVECTOR_H
 #include <iostream>
+#include "Darray.h"
 using namespace std;
 /**
   * \file      Dvector.cpp
@@ -8,8 +9,7 @@ using namespace std;
   * \brief     Définit la base d'une classe vecteur
  */
 
-  class Dvector
-  {
+  class Dvector:public Darray {
 
   public:
 
@@ -53,31 +53,6 @@ using namespace std;
  */
  void fillRandomly ();
  
-  double* getAdressVect() const;
-
-/**
- * \brief     Calcul la taille d'un vecteur
- * \return    Un entier correspondant à la taille du vecteur
- */
- int size() const;
-
- double operator()(int i) const;
-
- double& operator()(int i);
- 
- Dvector& operator=(const Dvector &P);
-
- Dvector& operator+=(const Dvector& elem);
- 
- Dvector& operator+=(const double val);
-
- Dvector& operator-=(const Dvector& elem);
- 
- Dvector& operator-=(const double val);
-
- Dvector& operator*=(const Dvector& elem);
-  
- Dvector& operator*=(const double val);
 
  void operator/=(const double val) ;
 
@@ -90,10 +65,8 @@ using namespace std;
    *\param      ndim nouvelle taille du vecteur
    * \param      val     valeur d'initialisation des nouveaux indices
    */
- void resize(int ndim,double val);
 
- Dvector operator-();
- 
+
 friend Dvector operator/(const Dvector & P,const double val);
  
 friend Dvector operator+(const Dvector & P,const Dvector & Q);
@@ -118,11 +91,6 @@ friend ostream & operator <<(ostream &OPut, const Dvector &P);
 
 friend istream & operator >>(istream& Stream, Dvector &P);
 
-
-
-private:
-	int dim;	
-	double *vect ;
 
 };
 
