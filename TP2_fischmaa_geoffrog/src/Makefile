@@ -6,32 +6,32 @@ OBJETS = $(SOURCES:.cpp=.o)
 
 all: $(TARGET)
 
-simpleConstructor: Dvector.o testSimpleConstructor.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testSimpleConstructor.o
+simpleConstructor: Darray.o Dvector.o testSimpleConstructor.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testSimpleConstructor.o
 
-copyConstructor: Dvector.o testCopyConstructor.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testCopyConstructor.o
+copyConstructor: Darray.o Dvector.o testCopyConstructor.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testCopyConstructor.o
 
-fileConstructor: Dvector.o testFileConstructor.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testFileConstructor.o
+fileConstructor: Darray.o Dvector.o testFileConstructor.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testFileConstructor.o
 
-size: Dvector.o testSize.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testSize.o
+size: Darray.o Dvector.o testSize.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testSize.o
 
-fill: Dvector.o testFill.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testFill.o
+fill: Darray.o Dvector.o testFill.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testFill.o
 
-operator: Dvector.o testOperator.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testOperator.o
+operator: Darray.o Dvector.o testOperator.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testOperator.o
 	
-resize: Dvector.o testresize.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testresize.o	
+resize: Darray.o Dvector.o testresize.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testresize.o	
 
-chevron: Dvector.o testChevron.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testChevron.o
+chevron: Darray.o Dvector.o testChevron.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testChevron.o
 	
-comparaisonegal: Dvector.o testComparaisonEgal.o
-	$(CXX) $(CXXFLAGS) -o $@ Dvector.o testComparaisonEgal.o	
+comparaisonegal: Darray.o Dvector.o testComparaisonEgal.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testComparaisonEgal.o	
 	
 check: $(TARGET)
 	./simpleConstructor && ./copyConstructor && ./fileConstructor && ./size && ./fill
