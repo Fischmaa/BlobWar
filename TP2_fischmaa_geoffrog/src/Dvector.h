@@ -22,12 +22,12 @@ using namespace std;
   * \param      d        taille du vecteur.
   * \param      val     valeur d'initialisation
  */
-  Dvector(int d, double val = 0.0);
+  explicit Dvector(int d, double val = 0.0);
 
 /**
   * \brief   Constructeur par recopie
  */
-  Dvector(const Dvector & P);
+  Dvector(const Darray & P);
 
 /**
   * \brief   Constructeur à partir d'un fichier

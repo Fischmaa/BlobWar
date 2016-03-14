@@ -16,7 +16,7 @@ Dvector::Dvector(int d, double val ):Darray(d,val){
     
 };
 
-Dvector::Dvector(const Dvector & P):Darray(P){
+Dvector::Dvector(const Darray & P):Darray(P){
     
 };
 
