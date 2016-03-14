@@ -1,8 +1,8 @@
 CXX = g++
 CXXFLAGS = -Wall -g
 TARGET = simpleConstructor copyConstructor fileConstructor size fill operator resize chevron comparaisonegal
-SOURCES = testComparaisonEgal.cpp testresize.cpp testChevron.cpp testOperator.cpp testSimpleConstructor.cpp testCopyConstructor.cpp testFileConstructor.cpp testSize.cpp testFill.cpp Dvector.cpp 
-OBJETS = $(SOURCES:.cpp=.o)
+SOURCES = testComparaisonEgal.cpp testresize.cpp testChevron.cpp testOperator.cpp testSimpleConstructor.cpp testCopyConstructor.cpp testFileConstructor.cpp testSize.cpp testFill.cpp Dvector.cpp Darray.cpp
+OBJETS = $(SOURCES:.cpp=.o) 
 
 all: $(TARGET)
 
