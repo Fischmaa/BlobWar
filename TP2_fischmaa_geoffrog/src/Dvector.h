@@ -9,7 +9,7 @@ using namespace std;
   * \brief     Définit la base d'une classe vecteur
  */
 
-  class Dvector:public Darray {
+  class Dvector: public Darray {
 
   public:
 
@@ -33,7 +33,7 @@ using namespace std;
   * \brief   Constructeur à partir d'un fichier
  *
  */
- Dvector(const std::string& name);
+  Dvector(const std::string& name);
 
 
 /**
@@ -54,7 +54,6 @@ using namespace std;
  void fillRandomly ();
  
 
- void operator/=(const double val) ;
 
  bool operator==(const Dvector &elem) const;
 
@@ -67,17 +66,7 @@ using namespace std;
    */
 
 
-friend Dvector operator/(const Dvector & P,const double val);
- 
-friend Dvector operator+(const Dvector & P,const Dvector & Q);
-
 friend Dvector operator+(const double val,const Dvector &P);
-
-friend Dvector operator+(const Dvector &P,const double val);
-
-friend Dvector operator-(const Dvector & P,const Dvector & Q);
-
-friend Dvector operator-(const double val,const Dvector &P);
 
 friend Dvector operator-(const Dvector &P,const double val);
 
@@ -94,19 +83,9 @@ friend istream & operator >>(istream& Stream, Dvector &P);
 
 };
 
-Dvector operator/(const Dvector & P,const double val);
-
-Dvector operator+(const Dvector & P,const Dvector & Q);
-
 Dvector operator+(const double val,const Dvector &P);
 
-Dvector operator+(const Dvector &P,const double val);
-
-Dvector operator-(const Dvector & P,const Dvector & Q);
-
 Dvector operator-(const double val,const Dvector &P);
-
-Dvector operator-(const Dvector &P,const double val);
 
 Dvector operator*(const Dvector & P,const Dvector & Q);
 

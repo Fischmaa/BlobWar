@@ -66,6 +66,19 @@ public:
 
  void resize(int ndim,double val);
   
+ Darray operator+(const Darray& elem);
+ 
+ Darray operator+(const double val);
+ 
+ Darray operator-(const Darray& elem);
+ 
+ Darray operator-(const double val);
+ 
+ Darray& operator/=(const double val) ;
+ 
+ Darray operator/(const double val);
+ 
+ 
 protected:
 	int dim;	
 	double *vect ;

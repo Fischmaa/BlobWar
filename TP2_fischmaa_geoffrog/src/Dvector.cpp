@@ -50,13 +50,7 @@ void Dvector::fillRandomly() {
     }
 }
 
-
-
-void Dvector::operator/=(const double val) {
-	for (int i = 0; i < this->size() ; i++){
-		this->vect[i] /= val;
-	}
-}
+ 
 
 bool Dvector::operator==(const Dvector& elem) const{
 	if(this->size()!=elem.size()){
@@ -78,13 +72,6 @@ bool Dvector::operator!=(const Dvector& elem) const{
 	return !res;
 }
 
-
-
-Dvector operator/(const Dvector &P,const double val){
-    	Dvector res(P);
-        res/=val;
-        return res;
-}
 
 
 Dvector operator+(const Dvector & P,const Dvector & Q){

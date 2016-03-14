@@ -104,6 +104,7 @@ double& Darray::operator()(int i){
 }
 
 Darray& Darray::operator=(const Darray &P){
+    cout<<"passage par darray";
     if(dim!=P.size()){
         this->resize(P.size(),0);
         }
@@ -189,3 +190,46 @@ Darray Darray::operator-() const{
      }
      dim=ndim;
  }
+ 
+ 
+ 
+ 
+ Darray Darray::operator+(const Darray& elem){
+	assert(elem.size() == this->size());
+        Darray res(*this);
+        res+=elem;
+	return res ;
+}
+
+Darray Darray::operator+(const double val){
+        Darray res(*this);
+        res+=val;
+	return res ;
+}
+
+Darray Darray::operator-(const Darray& elem){
+	assert(elem.size() == this->size());
+        Darray res(*this);
+        res-=elem;
+	return res ;
+}
+
+Darray Darray::operator-(const double val){
+        Darray res(*this);
+        res-=val;
+	return res ;
+}
+
+
+Darray& Darray::operator/=(const double val) {
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] /= val;
+	}
+        return *this;
+}
+
+Darray Darray::operator/(const double val){
+    	Darray res(*this);
+        res/=val;
+        return res;
+}
