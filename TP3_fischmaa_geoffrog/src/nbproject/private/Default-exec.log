@@ -1,0 +1,520 @@
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	Dvector.o
+	Dvector.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	Dvector.o
+	Dvector.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	Dvector.o
+	Dvector.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	Dvector.o
+	Dvector.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testSimpleConstructor.o
+	testSimpleConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testSimpleConstructor.o
+	testSimpleConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testSimpleConstructor.o
+	testSimpleConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testSimpleConstructor.o
+	testSimpleConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	simpleConstructor
+	Dvector.o
+	testSimpleConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	simpleConstructor
+	Dvector.o
+	testSimpleConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	simpleConstructor
+	Dvector.o
+	testSimpleConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	simpleConstructor
+	Dvector.o
+	testSimpleConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testCopyConstructor.o
+	testCopyConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testCopyConstructor.o
+	testCopyConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testCopyConstructor.o
+	testCopyConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testCopyConstructor.o
+	testCopyConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	copyConstructor
+	Dvector.o
+	testCopyConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	copyConstructor
+	Dvector.o
+	testCopyConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	copyConstructor
+	Dvector.o
+	testCopyConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	copyConstructor
+	Dvector.o
+	testCopyConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testFileConstructor.o
+	testFileConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testFileConstructor.o
+	testFileConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testFileConstructor.o
+	testFileConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testFileConstructor.o
+	testFileConstructor.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	fileConstructor
+	Dvector.o
+	testFileConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	fileConstructor
+	Dvector.o
+	testFileConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	fileConstructor
+	Dvector.o
+	testFileConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	fileConstructor
+	Dvector.o
+	testFileConstructor.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testSize.o
+	testSize.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testSize.o
+	testSize.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testSize.o
+	testSize.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testSize.o
+	testSize.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	size
+	Dvector.o
+	testSize.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	size
+	Dvector.o
+	testSize.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	size
+	Dvector.o
+	testSize.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	size
+	Dvector.o
+	testSize.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testFill.o
+	testFill.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testFill.o
+	testFill.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testFill.o
+	testFill.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testFill.o
+	testFill.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	fill
+	Dvector.o
+	testFill.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	fill
+	Dvector.o
+	testFill.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	fill
+	Dvector.o
+	testFill.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	fill
+	Dvector.o
+	testFill.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testOperator.o
+	testOperator.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-c
+	-o
+	testOperator.o
+	testOperator.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testOperator.o
+	testOperator.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-c
+	-o
+	testOperator.o
+	testOperator.cpp
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	operator
+	Dvector.o
+	testOperator.o
+
+called: /Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/usr/bin/g++
+	-Wall
+	-g
+	-o
+	operator
+	Dvector.o
+	testOperator.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	operator
+	Dvector.o
+	testOperator.o
+
+called: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	/Users/gergeoffroy/NetBeansProjects/ModelisationProgrammation/TP2_fischmaa_geoffrog/src
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+	-Wall
+	-g
+	-o
+	operator
+	Dvector.o
+	testOperator.o
+
