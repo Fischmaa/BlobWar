@@ -2,6 +2,8 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
+      <in>Darray.cpp</in>
+      <in>Darray.h</in>
       <in>Dvector.cpp</in>
       <in>testCopyConstructor.cpp</in>
       <in>testFileConstructor.cpp</in>
@@ -39,11 +41,11 @@
           <executablePath>operator</executablePath>
         </makeTool>
       </makefileType>
+      <item path="Darray.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Darray.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Dvector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="testChevron.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="testComparaisonEgal.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="testCopyConstructor.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -56,8 +58,6 @@
       <item path="testSimpleConstructor.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="testSize.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="testresize.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

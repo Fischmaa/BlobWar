@@ -10,3 +10,23 @@ En revanche lorsque que l'on écrit :
 Dvector x = Dvector(3,1.);
 
 Ici, on utilise l'opérateur = pour une affectation, donc le compilateur reconnait l'opérateur = et le programme s'execute normalement.
+
+
+
+Question 2)
+
+La première utilisation prend en paramètre les objets Dvector par recopie ce qui n’est pas très bien étant donné que ceux sont des objets lourd, il faut mieux les passer par référence comme il est fait dans la  deuxième méthode, et les passer en const car on ne va pas modifier les paramètres mais seulement les lire.
+
+Question 4)
+
+Le code est factorisé pour les opérateurs.
+La factorisation du constructeur par recopie avec l’opérateur = n’est pas possible dans notre implémentation où = n’effectue pas de nouvelle allocation mémoire.
+
+Question 5)
+
+Pour des vecteurs de taille 100 000 000 000 l’opérateur = est plus rapide sans la fonction memcpy:
+temps real sans memcpy:1m20.834s
+temps real avec:1m23.297s
+
+Question 6)
+Valgrind utilisé sur les différents tests ne montre pas de fuite mémoire

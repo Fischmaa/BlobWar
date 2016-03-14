@@ -7,8 +7,7 @@ using namespace std;
 
 int main()
 {
-    //Dvector R(10000000000,1);
-    //Dvector P=R;
-    return 0;
+  // Dvector R(10000000000,1);
+  // Dvector P=R;
 }
 

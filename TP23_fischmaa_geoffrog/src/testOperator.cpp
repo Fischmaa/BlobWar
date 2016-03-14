@@ -5,6 +5,8 @@
 #include <sstream>
 using namespace std;
 
+
+
 int main()
 {
   cout<<"Debut du test de l'opérateur d'accession en lecture:"<<endl;
@@ -116,6 +118,25 @@ int main()
    R.display(str);
    assert(str.str() == "2\n6\n");
    cout<<"OK"<<endl;
+   
+   
+     cout<<"Debut du test de l'opérateur = avec un vecteur:"<<endl;
+   Dvector T(1,3);
+   T=P;
+   str.str(std::string());
+   R.display(str);
+   assert(str.str() == "2\n6\n");
+   T.resize(7,8);
+   T=P;
+   str.str(std::string());
+   R.display(str);
+   assert(str.str() == "2\n6\n");
+   T.resize(2,0);
+   T=P;
+   str.str(std::string());
+   R.display(str);
+   assert(str.str() == "2\n6\n");
+   cout<<"OK"<<endl;
 
 
    cout<<"Debut du test de l'opérateur + avec un reel en externe:"<<endl;
@@ -138,13 +159,14 @@ int main()
    R.display(str);
    assert(str.str() == "5\n13\n");
    cout<<"OK"<<endl;
-
+/*
    cout<<"Debut du test de l'opérateur - :"<<endl;
-   R = -R ;
+    R.Darray:operator - (R);
    str.str(std::string());
    R.display(str);
    assert(str.str() == "-5\n-13\n");
-   cout<<"OK"<<endl;
+   cout<<"OK"<<endl;*/
+   /*R.Darray::operator=(-R);*/
 
 
   return 0;

@@ -1,6 +1,7 @@
 #ifndef DVECTOR_H
 #define DVECTOR_H
 #include <iostream>
+#include "Darray.h"
 using namespace std;
 /**
   * \file      Dvector.cpp
@@ -8,8 +9,7 @@ using namespace std;
   * \brief     Définit la base d'une classe vecteur
  */
 
-  class Dvector
-  {
+  class Dvector: public Darray {
 
   public:
 
@@ -22,18 +22,18 @@ using namespace std;
   * \param      d        taille du vecteur.
   * \param      val     valeur d'initialisation
  */
-  Dvector(int d, double val = 0.0);
+  explicit Dvector(int d, double val = 0.0);
 
 /**
   * \brief   Constructeur par recopie
  */
-  Dvector(const Dvector & P);
+  Dvector(const Darray & P);
 
 /**
   * \brief   Constructeur à partir d'un fichier
  *
  */
- Dvector(const std::string& name);
+  Dvector(const std::string& name);
 
 
 /**
@@ -46,40 +46,14 @@ using namespace std;
  * \brief    Affiche sur le flux en paramètre le contenu du vecteur
  * \param    str   flux passé en paramètre       
  */
- void display(std::ostream& str);
+ void display(std::ostream& str) const;
 
 /**
  * \brief   remplit un vecteur avec un générateur uniforme entre O et 1
  */
  void fillRandomly ();
  
-  double* getAdressVect() const;
 
-/**
- * \brief     Calcul la taille d'un vecteur
- * \return    Un entier correspondant à la taille du vecteur
- */
- int size() const;
-
- double operator()(int i) const;
-
- double& operator()(int i);
- 
- Dvector& operator=(const Dvector &P);
-
- Dvector& operator+=(const Dvector& elem);
- 
- Dvector& operator+=(const double val);
-
- Dvector& operator-=(const Dvector& elem);
- 
- Dvector& operator-=(const double val);
-
- Dvector& operator*=(const Dvector& elem);
-  
- Dvector& operator*=(const double val);
-
- void operator/=(const double val) ;
 
  bool operator==(const Dvector &elem) const;
 
@@ -90,21 +64,9 @@ using namespace std;
    *\param      ndim nouvelle taille du vecteur
    * \param      val     valeur d'initialisation des nouveaux indices
    */
- void resize(int ndim,double val);
 
- Dvector operator-();
- 
-friend Dvector operator/(const Dvector & P,const double val);
- 
-friend Dvector operator+(const Dvector & P,const Dvector & Q);
 
 friend Dvector operator+(const double val,const Dvector &P);
-
-friend Dvector operator+(const Dvector &P,const double val);
-
-friend Dvector operator-(const Dvector & P,const Dvector & Q);
-
-friend Dvector operator-(const double val,const Dvector &P);
 
 friend Dvector operator-(const Dvector &P,const double val);
 
@@ -119,26 +81,11 @@ friend ostream & operator <<(ostream &OPut, const Dvector &P);
 friend istream & operator >>(istream& Stream, Dvector &P);
 
 
-
-private:
-	int dim;	
-	double *vect ;
-
 };
-
-Dvector operator/(const Dvector & P,const double val);
-
-Dvector operator+(const Dvector & P,const Dvector & Q);
 
 Dvector operator+(const double val,const Dvector &P);
 
-Dvector operator+(const Dvector &P,const double val);
-
-Dvector operator-(const Dvector & P,const Dvector & Q);
-
 Dvector operator-(const double val,const Dvector &P);
-
-Dvector operator-(const Dvector &P,const double val);
 
 Dvector operator*(const Dvector & P,const Dvector & Q);
 

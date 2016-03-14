@@ -8,34 +8,90 @@
 #include <vector>
 #include <cassert>
 using namespace std;
-Dvector::Dvector():Darray(){
-    
-};
+Dvector::Dvector()
+{
+	std::cout << "Appel de Dvector() \n";
+	this->dim = 0 ;
+	this->vect = NULL;	
+}
 
-Dvector::Dvector(int d, double val ):Darray(d,val){
-    
-};
+Dvector::Dvector(int d, double val )
+{	
+	std::cout << "Appel de Dvector(int d, double val = 0.0) \n";
+	this->dim = d;
+	this->vect = new double[dim];
+	for( int i=0; i < dim ; i++ ){
+		this->vect[i]= val;
+	}
+}
 
-Dvector::Dvector(const Darray & P):Darray(P){
-    
-};
+Dvector::Dvector(const Dvector & P)
+{
+	std::cout << "Appel de Dvector(const Dvector & P) \n";
+        dim=P.size();
+	if(dim == 0) return;
+	vect=new double[dim];
+	for(int i=0;i<dim;i++){
+		vect[i]=P(i);
+	}
+}
 
-Dvector::Dvector(const std::string& name):Darray(name){
-    
-};
+Dvector::Dvector(const std::string& name)
+{
+	std::cout << "Appel de Dvector(std::string name) \n";
+	std::ifstream file(name.c_str(),std::ios::in);
+	std::vector<double> v;
+	double val ;
+	if(!file)
+	{
+		std::cout << "Echec de l'ouverture du fichier : "<< name << "\n";
+		this->dim = 0;
+		this->vect = NULL;
+	}
+	else
+	{
+		while(file>>val){
+			v.push_back(val);
+		}
 
+		this->dim = v.size();
+		this->vect = new double[dim];
+		for( int i=0; i < dim ; i++ ){
+			this->vect[i]= v[i];
+		}
 
-Dvector::~Dvector(){
-    
-};
+		file.close();
+	}
+}
 
-void Dvector::display( std::ostream& str) const
+double* Dvector::getAdressVect() const{
+    return this->vect;
+     }
+
+int Dvector::size() const
+{
+	return dim;
+}
+
+Dvector::~Dvector()
+{
+	delete [] vect ;
+}
+
+void Dvector::display( std::ostream& str)
 {
 	for (int i = 0; i < dim ; i++){
 		str << this->vect[i] << "\n" ;
 	}
 }
-
+/*
+void Dvector::fillRandomly()
+{
+	for(int i=0;i<dim;i++){
+		vect[i]= (double)rand() / (double)RAND_MAX ;
+	}
+}
+*/
 
 void Dvector::fillRandomly() {
     static bool init = false;
@@ -50,7 +106,85 @@ void Dvector::fillRandomly() {
     }
 }
 
- 
+
+
+double Dvector::operator()(int i) const{	
+	assert(i>=0 && i<=(this->size()-1));
+	return this->vect[i];
+}
+
+double& Dvector::operator()(int i){
+	assert(i>=0 && i<=(this->size()-1));
+	return this->vect[i];
+}
+
+Dvector& Dvector::operator=(const Dvector &P){
+    assert(dim==P.size());
+    std::memcpy(vect,P.getAdressVect(),dim*sizeof(double));
+    return *this;
+}
+/*
+Dvector& Dvector::operator=(const Dvector &P){
+    assert(dim==P.size());
+    for(int i=0;i<dim;i++){
+    vect[i]=P(i);
+    }
+    return *this;
+}*/
+
+Dvector& Dvector::operator+=(const Dvector&  elem){
+	assert(elem.size() == this->size());
+        Dvector &P=*this;
+	for (int i = 0; i < this->size() ; i++){
+		P(i) += elem(i);
+	}
+        return P;
+}
+
+Dvector& Dvector::operator+=(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] += val;
+	}
+        return *this;
+}
+
+Dvector& Dvector::operator-=(const Dvector&  elem){
+	assert(elem.size() == this->size());
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] -= elem(i);
+	}
+        return *this;
+}
+
+Dvector& Dvector::operator-=(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] -= val;
+	}
+        return *this;
+}
+
+Dvector& Dvector::operator*=(const Dvector& elem){
+    	assert(elem.size() == this->size());
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i]*=elem(i);
+	}
+        return *this;
+}
+
+Dvector& Dvector::operator*=(const double val){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] *= val;
+	}
+        return *this;
+}
+
+
+
+void Dvector::operator/=(const double val) {
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] /= val;
+	}
+}
 
 bool Dvector::operator==(const Dvector& elem) const{
 	if(this->size()!=elem.size()){
@@ -73,6 +207,25 @@ bool Dvector::operator!=(const Dvector& elem) const{
 }
 
 
+ void Dvector::resize(int ndim,double val){
+     if (ndim>dim){
+         double *temp=new double[ndim];
+         std::memcpy(temp,vect,dim*sizeof(double));
+         for(int i=dim;i<ndim;i++){
+         	temp[i]=val;
+         }
+         delete [] vect;
+         vect=temp;
+     }
+     dim=ndim;
+ }
+
+Dvector operator/(const Dvector &P,const double val){
+    	Dvector res(P);
+        res/=val;
+        return res;
+}
+
 
 Dvector operator+(const Dvector & P,const Dvector & Q){
     Dvector R(P);
@@ -84,11 +237,6 @@ Dvector operator+(const double val,const Dvector &P){
     	Dvector res(P);
         res+=val;
 	return res ;
-        
-        //a+b cest un nouvel objet on renvoie un nouvel objet
-        //res va etre detruit car cest local donc on peut pas renvoyer de reference dessus
-        //la seule possibilite serais de renvoyer une reference sur this mais ca na pas de sens
-        // reference sur += car on veut chainer le truc
 }
 
 Dvector operator+(const Dvector &P,const double val){
@@ -112,6 +260,12 @@ Dvector operator-(const Dvector &P,const double val){
         return res;
 }
 
+Dvector Dvector::operator-(){
+	for (int i = 0; i < this->size() ; i++){
+		this->vect[i] = -this->vect[i] ;
+	}
+	return *this ;
+}
 
 
 Dvector operator*(const Dvector & P,const Dvector & Q){
@@ -133,22 +287,18 @@ Dvector operator*(const Dvector &P,const double val){
 
 ostream & operator <<(ostream &OPut, const Dvector &P)
 {
-    P.display(OPut);
-    return OPut;
+OPut<<"Vecteur : ";
+for(int i=0;i<P.size();i++){ 
+    OPut<<P(i)<<" " ; 
 }
-
-// a tripatou
+OPut<<endl;
+return OPut;
+}
 
 istream & operator >>(istream& Stream, Dvector &P)
 {
- 
-    std::string str;
     for(int i=0;i<P.size();i++){ 
-        getline( Stream, str );
-        char *cptr = new char[str.size()+1]; // +1 to account for \0 byte
-        std::strncpy(cptr,str.c_str(), str.size());
-        P(i) = atof(cptr);
-       
+        Stream>>P(i); 
     }
     return Stream;
 }
