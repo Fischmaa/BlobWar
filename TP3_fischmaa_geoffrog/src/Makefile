@@ -1,10 +1,13 @@
 CXX = g++
 CXXFLAGS = -Wall -g
-TARGET = simpleConstructor copyConstructor fileConstructor size fill operator resize chevron comparaisonegal
-SOURCES = testComparaisonEgal.cpp testresize.cpp testChevron.cpp testOperator.cpp testSimpleConstructor.cpp testCopyConstructor.cpp testFileConstructor.cpp testSize.cpp testFill.cpp Dvector.cpp Darray.cpp
+TARGET = matrix simpleConstructor copyConstructor fileConstructor size fill operator resize chevron comparaisonegal
+SOURCES = testMatrix.cpp testComparaisonEgal.cpp testresize.cpp testChevron.cpp testOperator.cpp testSimpleConstructor.cpp testCopyConstructor.cpp testFileConstructor.cpp testSize.cpp testFill.cpp Dvector.cpp Darray.cpp
 OBJETS = $(SOURCES:.cpp=.o) 
 
 all: $(TARGET)
+
+matrix: Darray.o Dvector.o Dmatrix.o testMatrix.o
+	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o Dmatrix.o testMatrix.o
 
 simpleConstructor: Darray.o Dvector.o testSimpleConstructor.o
 	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testSimpleConstructor.o
@@ -34,7 +37,8 @@ comparaisonegal: Darray.o Dvector.o testComparaisonEgal.o
 	$(CXX) $(CXXFLAGS) -o $@ Darray.o Dvector.o testComparaisonEgal.o	
 	
 check: $(TARGET)
-	./simpleConstructor && ./copyConstructor && ./fileConstructor && ./size && ./fill
+	./simpleConstructor && ./copyConstructor
+	 && ./fileConstructor && ./size && ./fill &&./matrix
 
 clean:
 	rm $(TARGET) $(OBJETS)

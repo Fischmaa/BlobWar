@@ -104,25 +104,13 @@ double& Darray::operator()(int i){
 }
 
 Darray& Darray::operator=(const Darray &P){
-    cout<<"passage par darray";
-    if(dim!=P.size()){
-        this->resize(P.size(),0);
-        }
-        std::memcpy(vect,P.getAdressVect(),dim*sizeof(double));
-        return *this;
-    }
- 
-        
-   
-
-/*
-Darray& Darray::operator=(const Darray &P){
-    assert(dim==P.size());
-    for(int i=0;i<dim;i++){
-    vect[i]=P(i);
-    }
-    return *this;
-}*/
+	cout<<"passage par darray";
+	if(dim!=P.size()){
+		this->resize(P.size(),0);
+	}
+	std::memcpy(vect,P.getAdressVect(),dim*sizeof(double));
+	return *this;
+}
 
 Darray& Darray::operator+=(const Darray&  elem){
 	assert(elem.size() == this->size());
