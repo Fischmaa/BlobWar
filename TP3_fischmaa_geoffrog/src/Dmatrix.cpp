@@ -152,30 +152,3 @@ Dmatrix Dmatrix::cholesky(){
     }
     return res ;
 }
-
-// Dmatrix Dmatrix::cholesky(){
-//     assert(this->lines()==this->columns()); // matrice carré requise
-//     Dmatrix res = Dmatrix(this->columns(), this->columns());
-//     for(int k = 0; k < res.lines() ; k ++){
-
-//         for(int s = 0 ; s<=k ; s ++){
-
-//             if(s == k){
-//                 double somme = 0.0 ;
-//                 for(int j = 0 ; j<s;j++){
-//                     somme += res(s,j)*res(s,j);
-//                 }
-//                 res(s,s) = sqrt( (*this)(s,s) - somme );
-//             }
-//             else{
-//                 double somme = 0.0 ;
-//                 for(int i = 0 ; i < s; i ++){
-//                     somme += res(k,i)*res(s,i);
-//                 }
-//                 res(k,s) = 1.0/( res(s,s)*( (*this)(k,s) - somme ) );
-//             }
-//         }
-//     }
-
-//     return res ;
-// }
