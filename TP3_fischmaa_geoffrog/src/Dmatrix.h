@@ -53,6 +53,10 @@ public:
 
   Dmatrix operator*(const Dmatrix M) const;
 
+  Dmatrix transpose();
+
+  Dmatrix cholesky();
+
 };
 
 #endif
