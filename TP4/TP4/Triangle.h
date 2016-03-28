@@ -11,6 +11,7 @@
 template <typename T> 
 class Triangle {
 public:
+    Triangle<T>();
     Triangle(const Point<T> &p1,const Point<T> &p2,const Point<T> &p3);
     Point<T> p1();
     Point<T> p2();

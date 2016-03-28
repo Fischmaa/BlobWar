@@ -1,4 +1,14 @@
 #include "Point.h"
+#include <iostream>
+
+
+template <typename T>
+Point<T>::Point(){
+    //std::cout<<"Bonne classe Point";
+    abs=0;
+    ord=0;
+}
+
 
 
 template <typename T>

@@ -12,6 +12,7 @@
 template <typename T>
 class Point {
     public:
+        Point<T>();
         Point<T>(T abs,T ord);
         T x()const;
         T y()const;

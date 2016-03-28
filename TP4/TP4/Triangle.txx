@@ -6,6 +6,9 @@
  */
 
 #include "Triangle.h"
+template <typename T>
+Triangle<T>::Triangle(){
+};
 
 template <typename T>
 Triangle<T>::Triangle(const Point<T> &p1,const Point<T> &p2,const Point<T> &p3) 

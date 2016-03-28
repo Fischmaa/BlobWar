@@ -9,7 +9,8 @@
 #include <iostream>
 #include "Point.h"
 #include "Triangle.h"
-using namespace std;
+#include "Maillage.h"
+#include <vector>
 
 /*
  * 
@@ -20,6 +21,12 @@ int main(int argc, char** argv) {
     double y=P.y();
     std::cout<<x;
     std::cout<<y;
+    Triangle<double> T(P,P,P);
+    std::cout<<T.p1().x();
+    Triangle<double> T1;
+    std::cout<<T1.p1().x();
+    Maillage<double,std::vector> M(4,3,P);
+    
            
     return 0;
 }
