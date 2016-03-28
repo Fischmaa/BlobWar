@@ -26,8 +26,10 @@ int main(int argc, char** argv) {
     Triangle<double> T1;
     std::cout<<T1.p1().x();
     Maillage<double,std::vector> M(4,3,P);
-    
-           
+    M.add_Triangle(T);
+    std::cout<<M;
+    Maillage<double,std::vector> N(1,1,Point<double>(0,0));
+    std::cout<<N;
     return 0;
 }
 

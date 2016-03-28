@@ -12,11 +12,30 @@
 template <typename T>
 class Point {
     public:
+
+        
+        /**
+	 * @brief Constructeur simple
+	 * 
+	 * 
+	 */
         Point<T>();
+        /**
+	 * @brief Constructeur avec abcisse ordonne
+	 * @param abs abcisse
+	 * @param ord ordonnee
+	 * Construit un point a partir de labcisse et lordonnee
+	 */
         Point<T>(T abs,T ord);
+         /**
+	 * @brief Lecture de l'abcisse
+	 */  
         T x()const;
+         /**
+	 * @brief Lecture de l'ordonnee
+	 */  
         T y()const;
-    private:
+    protected:
         T abs;
         T ord;
     
